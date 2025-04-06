@@ -15,11 +15,6 @@ pipeline {
                 bat 'mvn clean test'
             }
         }
-        stage('Archive allure results') {
-            steps {
-                archiveArtifacts artifacts: 'allure-results/**', fingerprint: true
-            }
-        }
         stage('Allure Report') {
             steps {
                 allure([
