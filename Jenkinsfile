@@ -32,7 +32,7 @@ pipeline {
     }
     post {
         always {
-            junit 'target/surefire-reports/*.xml' // TestNG XML report for Jenkins
+            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, icon: '', keepAll: false, reportDir: 'allure-report', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
         }
         failure {
             echo 'Build failed! Check logs and reports.'
