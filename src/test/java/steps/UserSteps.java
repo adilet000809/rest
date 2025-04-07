@@ -36,4 +36,9 @@ public class UserSteps {
         ApiResponse user = response.as(ApiResponse.class);
         Assert.assertEquals(Long.parseLong(user.getMessage()), expectedId, "User id");
     }
+
+    @Step("Check param is {param}")
+    public void checkparam(String param) {
+        Assert.assertEquals(param, "my custom variable", "param");
+    }
 }
